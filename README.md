@@ -22,9 +22,9 @@ install.packages(c("energy", "randomForest"))
 
 # The randomForest package is used when covariates are adjusted by random forest residualization.
 
-# Install controlfunctionIV if it is available from your package source.
-# If it is installed from GitHub or a local source, add the exact command here.
-# install.packages("controlfunctionIV")
+# Install controlfunctionIV from GitHub.
+install.packages("remotes")
+remotes::install_github("zijguo/controlfunctionIV")
 ```
 
 ## Quick start
