@@ -1,9 +1,7 @@
 # Small runnable example for the CAT algorithm.
 
-project_root <- "D:/Testability_of_IV_Set/CAT_Condition_Nonlinear/github_code"
-
-source(file.path(project_root, "R", "data_generation.R"))
-source(file.path(project_root, "R", "cat_main.R"))
+source(file.path(getwd(), "data_generation.R"))
+source(file.path(getwd(), "cat_main.R"))
 
 set.seed(123)
 

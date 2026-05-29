@@ -6,13 +6,9 @@ This repository contains R code for simulating nonlinear instrumental variable (
 
 ```text
 .
-|-- R/
-|   |-- data_generation.R      # Simulation functions and default settings
-|   `-- cat_main.R             # Core CAT algorithm
-|-- examples/
-|   `-- run_small_example.R    # Minimal reproducible example
-|-- results/                   # Generated outputs, ignored by git
-|-- main.R                     # Convenient entry point
+|-- cat_main.R                 # Core CAT algorithm
+|-- data_generation.R          # Simulated data generation functions
+|-- run_small_example.R        # Minimal reproducible example
 |-- README.md
 `-- .gitignore
 ```
@@ -24,6 +20,8 @@ Install the required R packages:
 ```r
 install.packages(c("energy", "randomForest"))
 
+# The randomForest package is used when covariates are adjusted by random forest residualization.
+
 # Install controlfunctionIV if it is available from your package source.
 # If it is installed from GitHub or a local source, add the exact command here.
 # install.packages("controlfunctionIV")
@@ -34,7 +32,8 @@ install.packages(c("energy", "randomForest"))
 Run the small example:
 
 ```r
-source("examples/run_small_example.R")
+setwd("path/to/CAT")
+source("run_small_example.R")
 ```
 
 The example will:
@@ -48,7 +47,7 @@ The example will:
 
 ### Data generation
 
-`R/data_generation.R` contains:
+`data_generation.R` contains:
 
 - `function_lib()`: nonlinear and linear transformation library.
 - `noise_lib()`: random noise generator.
@@ -59,7 +58,7 @@ The example will:
 
 ### CAT algorithm
 
-`R/cat_main.R` contains:
+`cat_main.R` contains:
 
 - `CAT()`: core algorithm for evaluating candidate IV subsets of size `K`.
 
@@ -101,32 +100,15 @@ $best_IV_names
 [1] "IV1" "IV2"
 
 $best_dcor
-[1] 0.123456
+[1] 0.07759382
 ```
 
 ## Citation
 
-This repository is associated with the following working manuscript:
+This repository is associated with:
 
-```bibtex
-@article{Guo2026Testing,
-  title = {Testing the Validity of Instrumental Variable Sets in Causal Additive Models with Non-Constant Effects},
-  author = {Xichen Guo and Feng Xie and Bingbing Tang and Yan Zeng and Hao Zhang and Zhi Geng and Kun Zhang},
-  note = {Manuscript in preparation},
-  year = {2026}
-}
-```
-
-The related conference paper is:
-
-```bibtex
-@inproceedings{guodata,
-  title = {Data-Driven Selection of Instrumental Variables for Additive Nonlinear, Constant Effects Models},
-  author = {Guo, Xichen and Xie, Feng and Zeng, Yan and Zhang, Hao and Geng, Zhi},
-  booktitle = {Forty-second International Conference on Machine Learning},
-  year = {2025}
-}
-```
+- Testing the Validity of Instrumental Variable Sets in Causal Additive Models with Non-Constant Effects
+- Data-Driven Selection of Instrumental Variables for Additive Nonlinear, Constant Effects Models
 
 <!-- ## License
 
