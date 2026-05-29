@@ -9,8 +9,7 @@ This repository contains R code for simulating nonlinear instrumental variable (
 |-- cat_main.R                 # Core CAT algorithm
 |-- data_generation.R          # Simulated data generation functions
 |-- run_small_example.R        # Minimal reproducible example
-|-- README.md
-`-- .gitignore
+`-- README.md
 ```
 
 ## Installation
